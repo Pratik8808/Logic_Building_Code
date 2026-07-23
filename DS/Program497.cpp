@@ -1,3 +1,5 @@
+
+//Doubly Cirular 
 #include <iostream>
 using namespace std;
 #pragma pack(1)
@@ -7,15 +9,16 @@ struct node
     struct node *prev;
     struct node *next;
 };
-typedef struct node NODE;
-typedef struct node *PNODE;
+
+
+
 
 #pragma pack(1) // Applicable only one time
 class DoublyCL
 {   private:
     
-    PNODE first;
-    PNODE last;
+    struct node  * first;
+    struct node  * last;
     int iCount;
     public:
     DoublyCL();
@@ -42,7 +45,7 @@ DoublyCL::DoublyCL()
 
 void DoublyCL:: Display()
 {
-    PNODE temp=NULL;
+    struct node  * temp=NULL;
     temp=first;
     do{
         cout<<"|"<<temp->data<<"|<->";;
@@ -57,7 +60,7 @@ int DoublyCL:: Count()
 
 void DoublyCL:: Insertfirst(int iNo)
 {
-    PNODE newn=new NODE;
+    struct node  * newn=new struct node ;
     newn->data=iNo;
     newn->next=NULL;
     newn->prev=NULL;
@@ -80,8 +83,8 @@ void DoublyCL:: Insertfirst(int iNo)
 void DoublyCL:: InsertLast(int iNo)
 {
 
-    PNODE newn=new NODE;
-    PNODE temp=NULL;
+    struct node  * newn=new struct node ;
+    struct node  * temp=NULL;
     newn->data=iNo;
     newn->next=NULL;
     newn->prev=NULL;
@@ -102,9 +105,9 @@ void DoublyCL:: InsertLast(int iNo)
 }
 void DoublyCL:: InsertAtPost(int iNo,int iPost)
 {
-    PNODE temp=NULL;
-    PNODE newn=NULL;
-    newn=new NODE();
+    struct node  * temp=NULL;
+    struct node  * newn=NULL;
+    newn=new struct node ();
     newn->data=iNo;
     newn->next=NULL;
     newn->prev=NULL;
@@ -161,7 +164,7 @@ void DoublyCL:: DeleteLast()
        return;
     }
     else 
-    { PNODE temp=NULL;
+    { struct node  * temp=NULL;
         temp=first;
         while(temp->next!=last)
         {
@@ -199,7 +202,7 @@ void DoublyCL:: DeleteAtPos(int iPos)
         DeleteLast();
     }
     else 
-    { PNODE temp=NULL;
+    { struct node  * temp=NULL;
         temp=first;
        for (i=1;i<iPos-1;i++)
        {

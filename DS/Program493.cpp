@@ -1,16 +1,14 @@
-
-
 //Queue
-
 #include <iostream>
 using namespace std;
 #pragma pack(1)
+template <class T>
 struct node 
 {
-   int data;
+   T data;
    struct node * next;
 };
-
+template <class T>
 class Queue
 {
     private:
@@ -19,21 +17,21 @@ class Queue
 
  public:
      Queue();
-     void Enqueue(int iNo); // Insert Last
-     int Dequeue();    // Delete first
-     int Peep(); // 
+     void Enqueue(T iNo); // Insert Last
+     T Dequeue();    // Delete first
+     T Peep(); // 
      void Display();
      int Count();
 };
-
-Queue::Queue()
+template <class T>
+Queue<T>::Queue()
 {
      this->first=NULL;
      this->iCount=0;
 
 }
-
-void Queue:: Enqueue(int iNo)
+template <class T>
+void Queue<T>:: Enqueue(T iNo)
 {
     struct node *temp=NULL;
    struct node * newn=NULL;
@@ -56,8 +54,9 @@ void Queue:: Enqueue(int iNo)
     }
    iCount++;
 }
-int Queue:: Dequeue()
-{   int iValue=0;
+template <class T>
+T Queue<T>:: Dequeue()
+{   T iValue=0;
     struct node * temp=NULL;
     if(first==NULL)
     {
@@ -77,8 +76,9 @@ int Queue:: Dequeue()
     }
    
 }
+template <class T>
 
-void Queue:: Display()
+void Queue<T>:: Display()
 {
     struct node *temp=first;
     while(temp!=NULL)
@@ -87,14 +87,15 @@ void Queue:: Display()
         temp=temp->next;
     }
 }
-int Queue:: Count()
+template <class T>
+int Queue<T>:: Count()
 {
     return iCount;
 }
 
 int main()
 {
-    Queue Sobj;
+    Queue<int> Sobj;
     int iRet=0;
     int iValue=0;
     Sobj.Enqueue(11);
