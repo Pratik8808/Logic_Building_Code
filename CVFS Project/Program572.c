@@ -4,6 +4,8 @@
 int main()
 {   
     int fd=0;
+    //file descriptor 
+    // Owner root group and other and hex decimal
     fd=creat("Marvellous.txt",0777);
 
  if(fd==-1)

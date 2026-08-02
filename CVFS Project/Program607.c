@@ -19,6 +19,7 @@ int SmallCharacter(char *Filename)
         
         return -1;
     }
+    //Binary iRet madhe yeto
     while((iRet=read(fd,Buffer,sizeof(Buffer)))!=0)
     {
         // write(1,Buffer,iRet);

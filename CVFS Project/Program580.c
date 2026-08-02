@@ -18,6 +18,7 @@ int main()
  else
  {
     printf("File gets Sucessfully Opened with  fd :%d \n",fd);
+             // kashat karche  ,// kuthun karche means buffer or arr ,//size kite kache ahe 
     iRet=write(fd,Data,strlen(Data));
 
     printf("%d bytes get sucesssfully written \n",iRet);
