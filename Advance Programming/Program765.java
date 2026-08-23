@@ -1,0 +1,23 @@
+import java.util.*;
+
+class Program765
+{
+    public static void main(String[] args) 
+    {
+        Scanner sobj=new Scanner(System.in);
+
+        HashMap <Character,Integer>  hobj=new HashMap<Character,Integer>();
+        hobj.put('a',1);
+        hobj.put('b',1);
+        hobj.put('c',1);
+        hobj.put('d',1);
+        hobj.put('a',1);
+        hobj.put('b',1);
+
+
+
+        System.out.println(hobj);
+
+
+    }
+}
